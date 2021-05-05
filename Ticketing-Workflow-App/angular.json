@@ -72,6 +72,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "Ticketing-Workflow-App:build"
+            
           },
           "configurations": {
             "production": {

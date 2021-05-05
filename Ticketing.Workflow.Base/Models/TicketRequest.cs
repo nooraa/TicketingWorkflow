@@ -9,9 +9,9 @@ namespace Ticketing.Workflow.Base
     public class TicketRequest
     {
         public string Title { get; set; }
-        public string email { get; set; }
+        public string Email { get; set; }
         public string Description { get; set; }
-        public string CategoryId { get; set; }
-        public string SubcategoryId { get; set; }
+        public int CategoryId { get; set; }
+        public int SubcategoryId { get; set; }
     }
 }

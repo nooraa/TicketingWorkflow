@@ -22,7 +22,6 @@ namespace Ticketing.Workflow.Domain
         public DbSet<UserInfo> UserInfos { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
         public DbSet<PasswordInfo> PasswordInfos { get; set; }
-        public DbSet<Submetter> Submetters { get; set; }
         public DbSet<Resolution> Resolutions { get; set; }
     }
 }

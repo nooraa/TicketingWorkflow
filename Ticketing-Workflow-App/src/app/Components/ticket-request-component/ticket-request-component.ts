@@ -51,7 +51,7 @@ export class TicketRequestComponent implements OnInit {
   }
 
   getOptionText(option: any) {
-    if(option) return option.name;
+    if (option) return option.name;
   }
 
   onSubmit() {
@@ -63,7 +63,9 @@ export class TicketRequestComponent implements OnInit {
       subcategoryId: this.ticketRequestForm.controls['subcategory'].value?.id,
     };
     let res: boolean = false;
-    this.ticketService.saveTicketMetaData(submittedTicket).subscribe(respons => res = respons);
+    this.ticketService.saveTicketMetaData(submittedTicket).subscribe(res => {
+      console.log(res);
+    });
     this.ticketRequestForm.reset();
   }
 

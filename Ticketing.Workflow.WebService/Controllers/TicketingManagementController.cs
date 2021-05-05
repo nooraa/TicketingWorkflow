@@ -15,40 +15,27 @@ namespace Ticketing.Workflow.WebService.Controllers
     [ApiController]
     public class TicketingManagementController : ControllerBase
     {
-        private IDbContextManager dbCtx;
         private ITicketingManagement tickitingManagement;
         public TicketingManagementController()
         {
-            dbCtx = new DbContextManager();
-            dbCtx.ConnectToDb();
             tickitingManagement = new TicketingManagement();
         }
-        // GET: api/<TicketingManagementController>
         [HttpGet]
         public List<CategoryModel> GetCategories()
         {
             return tickitingManagement.GetCategories();
         }
 
-        // GET: api/<TicketingManagementController>
         [HttpGet]
         public List<SubCategoryModel> GetSubCategories()
         {
             return tickitingManagement.GetSubCategories();
         }
 
-        // GET api/<TicketingManagementController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<TicketingManagementController>
         [HttpPost]
-        public bool SaveNewTicketRequest([FromBody] TicketRequest value)
+        public async Task<bool> SaveNewTicketRequest([FromBody] TicketRequest value)
         {
-            return tickitingManagement.SaveNewTicket(value);
+            return await tickitingManagement.SaveNewTicketAsync(value);
         }
 
         // PUT api/<TicketingManagementController>/5
@@ -62,5 +49,13 @@ namespace Ticketing.Workflow.WebService.Controllers
         public void Delete(int id)
         {
         }
+
+        // GET api/<TicketingManagementController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
+
     }
 }

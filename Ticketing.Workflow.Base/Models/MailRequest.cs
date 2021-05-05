@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Ticketing.Workflow.Base
 {
-    public interface IDbContextManager
+    public class MailRequest
     {
-        /// <summary>
-        /// Start db connection
-        /// </summary>
-        void ConnectToDb();
+        public string ToEmail { get; set; }
+        public string Subject { get; set; }
+        public string Body { get; set; }
     }
 }

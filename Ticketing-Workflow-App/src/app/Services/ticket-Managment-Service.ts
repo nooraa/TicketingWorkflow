@@ -11,7 +11,7 @@ import { Category, SubCategory, TicketRequest} from '../Models/Models';
 
 export class TicketManagmenetService {
 
-  apiUrl = 'https://localhost:44331/api/TicketingManagement';
+  apiUrl = 'http://localhost:21631/api/TicketingManagement';
 
   constructor(private httpClient: HttpClient) { }
 

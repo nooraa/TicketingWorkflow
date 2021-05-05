@@ -13,7 +13,7 @@ namespace Ticketing.Workflow.Domain
         /// </summary>
         /// <param name="ticket">Ticket meta data</param>
         /// <returns></returns>
-        int InsertTicket(Ticket ticket);
+        int InsertTicket(Ticket ticket );
 
         /// <summary>
         /// Inserts admin user info to DB

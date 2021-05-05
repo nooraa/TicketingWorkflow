@@ -11,10 +11,12 @@ namespace Ticketing.Workflow.Base
     {
         IEFDataWriter dataWriter;
         IEFDataReader dataReader;
+        IMailService mailService;
         public TicketingManagement()
         {
             dataWriter = new EFDataWriter();
             dataReader = new EFDataReader();
+            mailService = new MailService();
         }
         public List<CategoryModel> GetCategories()
         {
@@ -48,9 +50,37 @@ namespace Ticketing.Workflow.Base
             return subcategoryModels;
         }
 
-        public bool SaveNewTicket(TicketRequest ticketData)
+        public async Task<bool> SaveNewTicketAsync(TicketRequest ticketData)
         {
-            return false;
+            Ticket ticket = new Ticket
+            {
+                Title = ticketData.Title,
+                Description = ticketData.Description,
+                Email = ticketData.Email,
+                Status = "Unassigned",
+                FK_Category = ticketData.CategoryId,
+                SubcategoryId = ticketData.SubcategoryId
+            };
+            int id = dataWriter.InsertTicket(ticket);
+            if (id == -1) return false;
+           await SendMailToAdminAsync(ticket.Title, ticket.Description);
+            return true;
+        }
+
+        private async Task SendMailToAdminAsync(string title, string description)
+        {
+            MailRequest request = new MailRequest();
+            request.Subject = "New ticket information!";
+            request.Body = @$"<h1>New ticket has been registered in the system</h1>
+                            Hello,
+                            <br />
+                            <p>A new ticket has been registered in the system:</p>
+                            <br />
+                            <p>Ticket title: {title}</p>
+                            <br />
+                            <p>Ticket description: {description}</p>";
+            request.ToEmail = "noora-70@live.se";
+           await mailService.SendEmailAsync(request);
         }
     }
 }
