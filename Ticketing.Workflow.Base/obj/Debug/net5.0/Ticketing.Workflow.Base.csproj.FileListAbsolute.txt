@@ -13,7 +13,6 @@ C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\bin\Debug\net5.0\Ticketi
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\bin\Debug\net5.0\Ticketing.Workflow.Base.dll
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\bin\Debug\net5.0\ref\Ticketing.Workflow.Base.dll
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\bin\Debug\net5.0\Ticketing.Workflow.Base.pdb
-C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketing.Workflow.Base.csprojAssemblyReference.cache
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketing.Workflow.Base.GeneratedMSBuildEditorConfig.editorconfig
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketing.Workflow.Base.AssemblyInfoInputs.cache
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketing.Workflow.Base.AssemblyInfo.cs

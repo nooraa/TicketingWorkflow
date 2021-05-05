@@ -5,9 +5,14 @@ VisualStudioVersion = 16.0.31205.175
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Workflow.Domain", "Ticketing.Workflow.Domain\Ticketing.Workflow.Domain.csproj", "{F122A016-88F6-42A5-9C01-4D0DB70E7F52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{58BA02B9-C406-408C-B85B-497A029D2718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApp", "TestConsoleApp\TestConsoleApp.csproj", "{58BA02B9-C406-408C-B85B-497A029D2718}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Workflow.Base", "Ticketing.Workflow.Base\Ticketing.Workflow.Base.csproj", "{284BDCF6-A98A-4446-BE20-B2DF2ADECBD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Workflow.Base", "Ticketing.Workflow.Base\Ticketing.Workflow.Base.csproj", "{284BDCF6-A98A-4446-BE20-B2DF2ADECBD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{316FE320-D07E-42AE-B9E6-B9C7B01A69AA}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
