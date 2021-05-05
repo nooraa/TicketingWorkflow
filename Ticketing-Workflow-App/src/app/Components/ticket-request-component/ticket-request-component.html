@@ -1,0 +1,40 @@
+<form class="form" [formGroup]="ticketRequestForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="form-element">
+        <input matInput placeholder="Title" formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-element">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-element">
+        <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-element">
+        <mat-label>Category</mat-label>
+        <input type="text" matInput formControlName="category" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="getOptionText">
+            <mat-option *ngFor="let category of categories" [value]="category">
+                {{category.name}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="toggleSubcategories(ticketRequestForm.value.category?.id)" appearance="fill" class="form-element">
+        <mat-label>Subcategory</mat-label>
+        <input type="text" matInput formControlName="subcategory" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="getOptionText">
+            <mat-option *ngFor="let subcategory of filtredSubcategories" [value]="subcategory">
+                {{subcategory.name}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <mat-card-actions>
+        <button style="float: right;margin:5px;" mat-raised-button type="submit" color="primary">Submit</button>
+    </mat-card-actions>
+    <mat-card-actions>
+        <button style="float: right;margin:5px;" mat-raised-button color="Basic">Cancel</button>
+    </mat-card-actions>
+</form>

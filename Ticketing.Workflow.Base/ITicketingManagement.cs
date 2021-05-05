@@ -10,5 +10,6 @@ namespace Ticketing.Workflow.Base
     {
         List<CategoryModel> GetCategories();
         List<SubCategoryModel> GetSubCategories();
+        bool SaveNewTicket(TicketRequest ticketData);
     }
 }

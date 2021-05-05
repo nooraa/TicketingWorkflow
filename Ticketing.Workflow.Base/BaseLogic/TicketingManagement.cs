@@ -47,5 +47,10 @@ namespace Ticketing.Workflow.Base
             }
             return subcategoryModels;
         }
+
+        public bool SaveNewTicket(TicketRequest ticketData)
+        {
+            return false;
+        }
     }
 }

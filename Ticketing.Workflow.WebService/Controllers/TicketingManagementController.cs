@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using Ticketing.Workflow.Base;
 
 namespace Ticketing.Workflow.WebService.Controllers
 {
+  
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class TicketingManagementController : ControllerBase
@@ -44,8 +46,9 @@ namespace Ticketing.Workflow.WebService.Controllers
 
         // POST api/<TicketingManagementController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public bool SaveNewTicketRequest([FromBody] TicketRequest value)
         {
+            return tickitingManagement.SaveNewTicket(value);
         }
 
         // PUT api/<TicketingManagementController>/5
