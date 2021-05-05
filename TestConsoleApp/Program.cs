@@ -9,7 +9,7 @@ namespace TestConsoleApp
         static IEFDataReader iEFReader;
         static void Main(string[] args)
         {
-            dbContext = new TicketingWorkflowDBContext(null);
+            dbContext = new TicketingWorkflowDBContext();
             iEFReader = new EFDataReader();
             iEFReader.GetSubCategories();
             Console.WriteLine("Hello World!");

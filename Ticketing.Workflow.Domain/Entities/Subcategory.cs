@@ -10,6 +10,6 @@ namespace Ticketing.Workflow.Domain
         [Key]
         public int SubCategoryId { get; set; }
         public string SubCategoryName { get; set; }
-        public int CategoryId { get; set; }
+        public int FK_Category { get; set; }
     }
 }

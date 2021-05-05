@@ -20,3 +20,11 @@ C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketi
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketing.Workflow.Base.dll
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\ref\Ticketing.Workflow.Base.dll
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketing.Workflow.Base.pdb
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketing.Workflow.Base.csprojAssemblyReference.cache
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\bin\Debug\net5.0\Ticketing.Workflow.Base.runtimeconfig.json
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\bin\Debug\net5.0\Ticketing.Workflow.Base.runtimeconfig.dev.json
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\bin\Debug\net5.0\Ticketing.Workflow.Domain.dll
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\bin\Debug\net5.0\Ticketing.Workflow.Domain.pdb
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\bin\Debug\net5.0\Ticketing.Workflow.Domain.dll.config
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketing.Workflow.Base.csproj.CopyComplete
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Base\obj\Debug\net5.0\Ticketing.Workflow.Base.genruntimeconfig.cache
