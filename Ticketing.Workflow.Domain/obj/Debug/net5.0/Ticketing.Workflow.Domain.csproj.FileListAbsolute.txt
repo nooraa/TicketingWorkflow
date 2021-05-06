@@ -28,3 +28,4 @@ C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticke
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\ref\Ticketing.Workflow.Domain.dll
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.pdb
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.genruntimeconfig.cache
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.csprojAssemblyReference.cache

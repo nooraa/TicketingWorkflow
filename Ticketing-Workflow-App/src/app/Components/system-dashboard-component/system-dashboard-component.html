@@ -4,7 +4,7 @@
         <input type="text" matInput formControlName="user" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="getOptionText">
             <mat-option *ngFor="let user of supportUsers" [value]="user">
-                {{user.userId}}
+                {{user.username}}
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
