@@ -59,21 +59,6 @@ namespace Ticketing.Workflow.Domain
             return passinfo == null ? null : user;
         }
 
-        public Ticket GetTicket(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Ticket> GetTickets(int userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public UserInfo GetUserInfo(int userId)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<SubCategory> GetSubCategories()
         {
             List<SubCategory> subCategories = new List<SubCategory>();

@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Ticketing.Workflow.Base;
 
@@ -60,25 +57,6 @@ namespace Ticketing.Workflow.WebService.Controllers
         public UserInfo Login([FromBody] LoginInfo value)
         {
             return submittingManagement.Login(value);
-        }
-
-        // PUT api/<TicketingManagementController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<TicketingManagementController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-
-        // GET api/<TicketingManagementController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
         }
 
     }

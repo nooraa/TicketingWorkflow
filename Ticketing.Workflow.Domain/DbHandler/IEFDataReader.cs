@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Ticketing.Workflow.Domain
 {
@@ -26,18 +22,6 @@ namespace Ticketing.Workflow.Domain
         /// <param name="password"></param>
         /// <returns>Loged in User info</returns>
         UserInfo Login(string username, string password);
-        /// <summary>
-        /// Gets a ticket by ticket ID
-        /// </summary>
-        /// <param name="id">Ticket ID</param>
-        /// <returns></returns>
-        List<Ticket> GetTickets(int userId);
-        /// <summary>
-        /// Gets user info by user ID
-        /// </summary>
-        ///<param name="userId">User ID</param>
-        /// <returns></returns>
-        UserInfo GetUserInfo(int userId);
         /// <summary>
         /// Gets all SubCategories
         /// </summary>
