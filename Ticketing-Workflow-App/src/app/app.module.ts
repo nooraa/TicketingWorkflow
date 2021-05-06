@@ -16,17 +16,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { TicketRequestComponent } from './Components/ticket-request-component/ticket-request-component';
-import { StartPageComponent } from './Components/start-page-component/start-page-component';
 import { TicketManagmenetService } from './Services/ticket-Managment-Service';
-
+import { LoginService } from './Services/login-Service';
+import { AuthGuardService } from './Services/Auth-Guard-Service';
+import { LoginComponent } from './Components/login-component/login-component';
+import { SystemDashboardComponent } from './Components/system-dashboard-component/system-dashboard-component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
-    StartPageComponent,
-    TicketRequestComponent
+    TicketRequestComponent,
+    LoginComponent,
+    SystemDashboardComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -42,7 +47,12 @@ import { TicketManagmenetService } from './Services/ticket-Managment-Service';
     MatAutocompleteModule,
     HttpClientModule
   ],
-  providers: [TicketManagmenetService],
+  providers: [
+    TicketManagmenetService,
+    LoginService,
+    AuthGuardService
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

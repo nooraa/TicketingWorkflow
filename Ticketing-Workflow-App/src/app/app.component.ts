@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
-import { StartPageComponent } from './Components/start-page-component/start-page-component';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-root',
-  entryComponents: [StartPageComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'Ticketing-Workflow-App';
+  isAuthenticated = false;
+  constructor(private router: Router){
+
+  }
+   logout():void {
+    this.router.navigate(['/']);
+  }
 }

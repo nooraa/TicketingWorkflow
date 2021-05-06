@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StartPageComponent } from './start-page-component';
+import { SystemDashboardComponent } from './system-dashboard-component';
 
-describe('StartPageComponent', () => {
-  let component: StartPageComponent;
-  let fixture: ComponentFixture<StartPageComponent>;
+describe('SystemDashboardComponent', () => {
+  let component: SystemDashboardComponent;
+  let fixture: ComponentFixture<SystemDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StartPageComponent ]
+      declarations: [ SystemDashboardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StartPageComponent);
+    fixture = TestBed.createComponent(SystemDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
