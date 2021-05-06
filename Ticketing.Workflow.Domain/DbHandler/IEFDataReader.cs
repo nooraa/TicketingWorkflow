@@ -9,15 +9,27 @@ namespace Ticketing.Workflow.Domain
    public interface IEFDataReader
     {
         /// <summary>
+        /// Returns a list all support engineers.
+        /// </summary>
+        /// <returns></returns>
+        List<UserInfo> GetAllSupportEngineers();
+     
+        /// <summary>
+        /// Returns a list of Unassigned tickets.
+        /// </summary>
+        /// <returns></returns>
+        List<Ticket> GetUnassignedTickets();
+        /// <summary>
+        /// User loging
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>Loged in User info</returns>
+        UserInfo Login(string username, string password);
+        /// <summary>
         /// Gets a ticket by ticket ID
         /// </summary>
         /// <param name="id">Ticket ID</param>
-        /// <returns></returns>
-        Ticket GetTicket(int id);
-        /// <summary>
-        /// Gets All tickets assigned to User
-        /// </summary>
-        ///<param name="userId">User ID</param>
         /// <returns></returns>
         List<Ticket> GetTickets(int userId);
         /// <summary>

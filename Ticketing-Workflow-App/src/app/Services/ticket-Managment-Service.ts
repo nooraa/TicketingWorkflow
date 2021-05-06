@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { Category, SubCategory, TicketRequest} from '../Models/Models';
+import { Category, SubCategory, TicketRequest, UnassignedTicket, UserInfo} from '../Models/Models';
 
 
 @Injectable({
@@ -31,6 +31,22 @@ export class TicketManagmenetService {
 
   getSubCategories(): Observable<SubCategory[]> {
     return this.httpClient.get<SubCategory[]>(this.apiUrl + '/GetSubCategories')
+    .pipe(
+      retry(1),
+      catchError(this.httpError)
+    )
+  }
+
+  getUnassignedTickets(): Observable<UnassignedTicket[]> {
+    return this.httpClient.get<UnassignedTicket[]>(this.apiUrl + '/GetUnassignedTickets')
+    .pipe(
+      retry(1),
+      catchError(this.httpError)
+    )
+  }
+
+  GetSupportUsers(): Observable<UserInfo[]> {
+    return this.httpClient.get<UserInfo[]>(this.apiUrl + '/GetSupportEngineers')
     .pipe(
       retry(1),
       catchError(this.httpError)

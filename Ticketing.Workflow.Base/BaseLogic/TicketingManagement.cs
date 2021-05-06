@@ -49,6 +49,27 @@ namespace Ticketing.Workflow.Base
             }
             return subcategoryModels;
         }
+        /// <summary>
+        /// Gets all unassigned tickets
+        /// </summary>
+        /// <returns>A list of UnassignedTicket</returns>
+        public List<UnassignedTicket> GetUnassignedTickets() {
+            List<UnassignedTicket> tickets = new List<UnassignedTicket>();
+                var dbTickets = dataReader.GetUnassignedTickets();
+            foreach(var ticket in dbTickets)
+            {
+                UnassignedTicket item = new UnassignedTicket
+                {
+                    TicketId = ticket.TicketId,
+                    Title = ticket.Title,
+                    Description = ticket.Description,
+                    Status = ticket.Status,
+                    SubmitterEmail = ticket.Email
+                };
+                tickets.Add(item);
+            }
+            return tickets;
+        }
 
         public async Task<bool> SaveNewTicketAsync(TicketRequest ticketData)
         {

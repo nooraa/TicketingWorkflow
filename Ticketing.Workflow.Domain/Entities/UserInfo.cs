@@ -9,6 +9,6 @@ namespace Ticketing.Workflow.Domain
         [Key]
         public int UserId { get; set; }
         public string Username { get; set; }
-        public virtual UserType Type { get; set; }
+        public int FK_UserType { get; set; }
     }
 }

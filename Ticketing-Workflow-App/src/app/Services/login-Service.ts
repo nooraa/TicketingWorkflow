@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router'
 import { retry, catchError } from 'rxjs/operators';
+import { UserInfo } from '../Models/Models';
 @Injectable({
     providedIn: 'root',
 })
@@ -21,12 +22,12 @@ export class LoginService {
     }
 
 
-    login(username: string, password: string): Observable<boolean> {
+    login(username: string, password: string): Observable<UserInfo> {
         let user = {
             username: username,
             password: password
         }
-        return this.httpClient.post<boolean>(this.apiUrl + '/login', JSON.stringify(user), this.httpHeader)
+        return this.httpClient.post<UserInfo>(this.apiUrl + '/login', JSON.stringify(user), this.httpHeader)
             .pipe(
                 retry(1),
                 catchError(this.httpError)

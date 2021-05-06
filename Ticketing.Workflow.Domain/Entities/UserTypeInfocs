@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Ticketing.Workflow.Domain
 {
     [Table("UserTypes")]
-    public class UserType
+    public class UserTypeInfo
     {
         [Key]
         public int UserTypeId { get; set; }
-        public string Type { get; set; }
+        public string UserType { get; set; }
 
     }
 }

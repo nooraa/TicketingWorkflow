@@ -13,6 +13,10 @@ C:\assignments\Ticketing.Workflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Tic
 C:\assignments\Ticketing.Workflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\ref\Ticketing.Workflow.Domain.dll
 C:\assignments\Ticketing.Workflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.pdb
 C:\assignments\Ticketing.Workflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.genruntimeconfig.cache
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.AssemblyInfoInputs.cache
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.AssemblyInfo.cs
+C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.csproj.CoreCompileInputs.cache
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\bin\Debug\net5.0\Ticketing.Workflow.Domain.dll.config
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\bin\Debug\net5.0\Ticketing.Workflow.Domain.deps.json
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\bin\Debug\net5.0\Ticketing.Workflow.Domain.runtimeconfig.json
@@ -20,10 +24,6 @@ C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\bin\Debug\net5.0\Ticke
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\bin\Debug\net5.0\Ticketing.Workflow.Domain.dll
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\bin\Debug\net5.0\ref\Ticketing.Workflow.Domain.dll
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\bin\Debug\net5.0\Ticketing.Workflow.Domain.pdb
-C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.AssemblyInfoInputs.cache
-C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.AssemblyInfo.cs
-C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.csproj.CoreCompileInputs.cache
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.dll
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\ref\Ticketing.Workflow.Domain.dll
 C:\GitHubRepo\TicketingWorkflow\Ticketing.Workflow.Domain\obj\Debug\net5.0\Ticketing.Workflow.Domain.pdb

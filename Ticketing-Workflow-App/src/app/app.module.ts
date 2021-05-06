@@ -22,19 +22,29 @@ import { AuthGuardService } from './Services/Auth-Guard-Service';
 import { LoginComponent } from './Components/login-component/login-component';
 import { SystemDashboardComponent } from './Components/system-dashboard-component/system-dashboard-component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import {CdkTableModule} from '@angular/cdk/table';
+import { MatSortModule } from "@angular/material/sort";
+import { MatTableModule } from "@angular/material/table";
+import {MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
     TicketRequestComponent,
     LoginComponent,
-    SystemDashboardComponent
+    SystemDashboardComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule,
+    FormsModule,
+    CdkTableModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatSortModule,
+    MatTableModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
@@ -45,7 +55,8 @@ import { RouterModule } from '@angular/router';
     MatSliderModule,
     MatInputModule,
     MatAutocompleteModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [
     TicketManagmenetService,

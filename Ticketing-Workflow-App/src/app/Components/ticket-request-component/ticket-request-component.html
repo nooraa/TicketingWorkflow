@@ -1,7 +1,7 @@
-
 <form class="form" [formGroup]="ticketRequestForm" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="fill" class="form-element">
-        <input matInput placeholder="Title" formControlName="title">
+    <mat-form-field hintLabel="Max 200 characters" appearance="fill" class="form-element">
+        <input #input maxlength="200" matInput placeholder="Title" formControlName="title">
+        <mat-hint align="end">{{input.value?.length || 0}}/200</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="form-element">
@@ -11,6 +11,8 @@
 
     <mat-form-field appearance="fill" class="form-element">
         <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="ticketRequestForm.controls['email'].hasError('email')">Please enter a valid email address
+        </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="form-element">
@@ -23,7 +25,8 @@
         </mat-autocomplete>
     </mat-form-field>
 
-    <mat-form-field *ngIf="toggleSubcategories(ticketRequestForm.value.category?.id)" appearance="fill" class="form-element">
+    <mat-form-field *ngIf="toggleSubcategories(ticketRequestForm.value.category?.id)" appearance="fill"
+        class="form-element">
         <mat-label>Subcategory</mat-label>
         <input type="text" matInput formControlName="subcategory" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="getOptionText">
@@ -32,8 +35,27 @@
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
+    <mat-form-field appearance="fill" class="form-element">
+        <div>
+            <mat-toolbar>
+                <!-- Display files names -->
+                <input matInput formControlName="uploadedFile" name="fileAttr" [(ngModel)]="fileAttr" readonly>
+
+
+                <!-- Browse Button -->
+                <button mat-flat-button color="primary">
+                    Browse File
+                </button>
+            </mat-toolbar>
+            <!-- Fetch selected filed on change -->
+            <input type="file"
+                accept=".txt, .docx, .pdf,.doc,application/msword, .csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" />
+        </div>
+    </mat-form-field>
     <mat-card-actions>
-        <button style="float: right;margin:5px;" mat-raised-button type="submit" color="primary">Submit</button>
+        <button [disabled]="!ticketRequestForm.valid" style="float: right;margin:5px;" mat-raised-button type="submit"
+            color="primary">Submit</button>
     </mat-card-actions>
     <mat-card-actions>
         <button style="float: right;margin:5px;" mat-raised-button color="Basic">Cancel</button>

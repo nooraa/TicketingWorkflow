@@ -16,9 +16,11 @@ namespace Ticketing.Workflow.WebService.Controllers
     public class TicketingManagementController : ControllerBase
     {
         private ITicketingManagement tickitingManagement;
+        private ISubmittingManagement submittingManagement;
         public TicketingManagementController()
         {
             tickitingManagement = new TicketingManagement();
+            submittingManagement = new SubmittingManagement();
         }
         [HttpGet]
         public List<CategoryModel> GetCategories()
@@ -31,11 +33,28 @@ namespace Ticketing.Workflow.WebService.Controllers
         {
             return tickitingManagement.GetSubCategories();
         }
+        [HttpGet]
+        public List<UserInfo> GetSupportEngineers()
+        {
+            return submittingManagement.GetAllSupportEngineers();
+        }
+
+        [HttpGet]
+        public List<UnassignedTicket> GetUnassignedTickets()
+        {
+            return tickitingManagement.GetUnassignedTickets();
+        }
 
         [HttpPost]
         public async Task<bool> SaveNewTicketRequest([FromBody] TicketRequest value)
         {
             return await tickitingManagement.SaveNewTicketAsync(value);
+        }
+
+        [HttpPost]
+        public UserInfo Login([FromBody] LoginInfo value)
+        {
+            return submittingManagement.Login(value);
         }
 
         // PUT api/<TicketingManagementController>/5

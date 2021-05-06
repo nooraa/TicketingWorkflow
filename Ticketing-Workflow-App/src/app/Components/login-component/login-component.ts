@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { LoginService } from '../../Services/login-Service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login-component.html',
@@ -8,12 +9,12 @@ import { LoginService } from '../../Services/login-Service';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup = new FormGroup({
-    password: new FormControl(''),
-    username: new FormControl(''),
+    password: new FormControl('', [Validators.required]),
+    username: new FormControl('', [Validators.required]),
   }); 
   public loginInvalid = false;
   private formSubmitAttempt = false;
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private route: Router) { }
 
   ngOnInit(): void {
 
@@ -25,7 +26,10 @@ export class LoginComponent implements OnInit {
       try {
         const username = this.form.controls['username']?.value;
         const password = this.form.controls['password']?.value;
-        this.loginService.login(username, password).subscribe(l =>this.loginInvalid = l);
+        let name = '';
+        this.loginService.login(username, password).subscribe(user => name = user?.username);
+          this.route.navigate(['/dashboard']);
+
       } catch (err) {
         this.loginInvalid = true;
       }

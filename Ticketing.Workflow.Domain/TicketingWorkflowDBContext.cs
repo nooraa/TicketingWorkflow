@@ -20,7 +20,7 @@ namespace Ticketing.Workflow.Domain
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<UserInfo> UserInfos { get; set; }
-        public DbSet<UserType> UserTypes { get; set; }
+        public DbSet<UserTypeInfo> UserTypes { get; set; }
         public DbSet<PasswordInfo> PasswordInfos { get; set; }
         public DbSet<Resolution> Resolutions { get; set; }
     }

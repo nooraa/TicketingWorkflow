@@ -40,6 +40,10 @@ C:\assignments\Ticketing.Workflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp
 C:\assignments\Ticketing.Workflow\TestConsoleApp\obj\Debug\net5.0\ref\TestConsoleApp.dll
 C:\assignments\Ticketing.Workflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.pdb
 C:\assignments\Ticketing.Workflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.genruntimeconfig.cache
+C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.AssemblyInfoInputs.cache
+C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.AssemblyInfo.cs
+C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.csproj.CoreCompileInputs.cache
 C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\bin\Debug\net5.0\TestConsoleApp.exe
 C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\bin\Debug\net5.0\TestConsoleApp.dll.config
 C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\bin\Debug\net5.0\TestConsoleApp.deps.json
@@ -73,10 +77,6 @@ C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\bin\Debug\net5.0\Ticketing.Workfl
 C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\bin\Debug\net5.0\Ticketing.Workflow.Domain.pdb
 C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\bin\Debug\net5.0\Ticketing.Workflow.Domain.dll.config
 C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.csprojAssemblyReference.cache
-C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.AssemblyInfoInputs.cache
-C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.AssemblyInfo.cs
-C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.csproj.CoreCompileInputs.cache
 C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.csproj.CopyComplete
 C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\TestConsoleApp.dll
 C:\GitHubRepo\TicketingWorkflow\TestConsoleApp\obj\Debug\net5.0\ref\TestConsoleApp.dll
