@@ -19,5 +19,11 @@ namespace Ticketing.Workflow.Base
         /// </summary>
         /// <returns>List of UserInfo</returns>
         List<UserInfo> GetAllSupportEngineers();
+        /// <summary>
+        /// Assigns ticket to user
+        /// </summary>
+        /// <param name="assignedUserId"></param>
+        /// <param name="ticketId"></param>
+        Task AssignTicketToUserAsync(int assignedUserId, int ticketId);
     }
 }

@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Category, SubCategory, TicketRequest } from '../../Models/Models';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 import { TicketManagmenetService } from '../../Services/ticket-Managment-Service';
 
 
@@ -20,7 +18,6 @@ export class TicketRequestComponent implements OnInit {
     subcategory: new FormControl('', [Validators.required]),
     uploadedFile: new FormControl('', [Validators.required])
   });
-  myControl = new FormControl();
   categories: Category[] = [];
   subcategories: SubCategory[] = [];
   filtredSubcategories: SubCategory[] = [];

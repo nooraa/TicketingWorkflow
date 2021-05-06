@@ -21,5 +21,12 @@ namespace Ticketing.Workflow.Domain
         /// <param name="user">Admin user info</param>
         /// <returns></returns>
         int InsertUserInfo(UserInfo user);
+        /// <summary>
+        /// Uptadet the ticket and assigns it to user
+        /// </summary>
+        /// <param name="assignedUserId"></param>
+        /// <param name="ticketId"></param>
+        Ticket UptadeTicket(int assignedUserId, int ticketId);
+
     }
 }

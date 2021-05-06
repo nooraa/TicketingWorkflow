@@ -1,38 +1,52 @@
+<form class="form" [formGroup]="formG" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>Support engineer</mat-label>
+        <input type="text" matInput formControlName="user" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="getOptionText">
+            <mat-option *ngFor="let user of supportUsers" [value]="user">
+                {{user.userId}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <mat-card-actions>
+        <button [disabled]="!formG.valid" style="margin:5px;" mat-raised-button type="submit"
+            color="primary">Assign</button>
+    </mat-card-actions>
+
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-        <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-        <!-- Position Column -->
+        <!-- Tilte Column -->
         <ng-container matColumnDef="tilte">
             <th mat-header-cell *matHeaderCellDef> Tilte </th>
             <td mat-cell *matCellDef="let element"> {{element.title}} </td>
         </ng-container>
 
-        <!-- Name Column -->
+        <!-- Description Column -->
         <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef> Description </th>
             <td mat-cell *matCellDef="let element"> {{element.description}} </td>
         </ng-container>
 
-        <!-- Weight Column -->
+        <!-- Submitter Column -->
         <ng-container matColumnDef="submitterEmail">
             <th mat-header-cell *matHeaderCellDef> Submitter </th>
             <td mat-cell *matCellDef="let element"> {{element.submitterEmail}} </td>
         </ng-container>
 
-        <!-- Symbol Column -->
+        <!-- Status Column -->
         <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef> Status </th>
             <td mat-cell *matCellDef="let element"> {{element.status}} </td>
         </ng-container>
-        Symbol Column 
+
+        <!-- Assign Column -->
         <ng-container matColumnDef="assign">
-            <th mat-header-cell *matHeaderCellDef> Assign to suport-engineer </th>
-            <td mat-cell *matCellDef="let element"><button mat-mini-fab color="primary">
-                <mat-icon>add</mat-icon>
-              </button></td>
+            <th mat-header-cell *matHeaderCellDef> Asign to suport-eng </th>
+            <td mat-cell *matCellDef="let element; let i=index">
+                <mat-checkbox formControlName="checkbox" (change)=updateCheckedList(element)></mat-checkbox>
+            </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+</form>

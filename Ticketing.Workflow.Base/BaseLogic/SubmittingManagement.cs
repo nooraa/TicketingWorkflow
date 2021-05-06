@@ -50,5 +50,34 @@ namespace Ticketing.Workflow.Base
             }
             return supportUsers;
         }
+        /// <summary>
+        /// Assigns ticket to user
+        /// </summary>
+        /// <param name="assignedUserId"></param>
+        /// <param name="ticketId"></param>
+        public async Task AssignTicketToUserAsync(int assignedUserId, int ticketId)
+        {
+            var assignedTicket = dataWriter.UptadeTicket(assignedUserId, ticketId);
+            if(assignedTicket != null)
+            {
+                await SendMailToSuportEngAsync(assignedTicket.Title, assignedTicket.Description);
+            }
+        }
+
+        private async Task SendMailToSuportEngAsync(string title, string description)
+        {
+            MailRequest request = new MailRequest();
+            request.Subject = "New ticket information!";
+            request.Body = @$"<h1>New ticket has been assigned to you!</h1>
+                            Hello,
+                            <br />
+                            <p>The below is information about the ticket that has been assigned to you!</p>
+                            <br />
+                            <p>Ticket title: {title}</p>
+                            <br />
+                            <p>Ticket description: {description}</p>";
+            request.ToEmail = "noora-70@live.se";
+            await mailService.SendEmailAsync(request);
+        }
     }
 }

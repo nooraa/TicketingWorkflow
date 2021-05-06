@@ -52,6 +52,11 @@ namespace Ticketing.Workflow.WebService.Controllers
         }
 
         [HttpPost]
+        public void AssignTicketToUser([FromBody] TicketAssignReq value)
+        {
+             submittingManagement.AssignTicketToUserAsync(value.AssignedUserId, value.TicketId);
+        }
+        [HttpPost]
         public UserInfo Login([FromBody] LoginInfo value)
         {
             return submittingManagement.Login(value);

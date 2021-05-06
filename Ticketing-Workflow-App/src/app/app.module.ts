@@ -27,7 +27,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import { MatSortModule } from "@angular/material/sort";
 import { MatTableModule } from "@angular/material/table";
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +40,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     RouterModule,
     FormsModule,
     CdkTableModule,
+    MatCheckboxModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,

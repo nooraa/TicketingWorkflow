@@ -61,21 +61,17 @@ export class TicketManagmenetService {
     )
   } 
 
-/* getUser(id): Observable<User> {
-    return this.httpClient.get<User>(this.apiUrl + '/users/' + id)
+  assignTickettoUser(userId: number, ticketId:number): Observable<boolean> {
+    let assignTicket = {
+      userId: userId,
+      tickedId: ticketId
+  }
+    return this.httpClient.post<boolean>(this.apiUrl + '/AssignTicketToUser', JSON.stringify(assignTicket), this.httpHeader)
     .pipe(
       retry(1),
       catchError(this.httpError)
     )
-  }  
-
-  create(employee): Observable<User> {
-    return this.httpClient.post<User>(this.apiUrl + '/users', JSON.stringify(employee), this.httpHeader)
-    .pipe(
-      retry(1),
-      catchError(this.httpError)
-    )
-  }  */
+  } 
 
   httpError(error: any) {
     let msg = '';

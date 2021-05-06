@@ -1,5 +1,6 @@
 ﻿using System;
 using log4net;
+using System.Linq;
 
 namespace Ticketing.Workflow.Domain
 {
@@ -61,6 +62,30 @@ namespace Ticketing.Workflow.Domain
                     }
                 }
                 return userId;
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException(e.Message);
+            }
+        }
+
+        public Ticket UptadeTicket(int assignedUserId, int ticketId)
+        {
+            try
+            {
+                Ticket ticket = null;
+                    using (var ctx = new TicketingWorkflowDBContext())
+                    {
+                    ticket = ctx.Tickets.Where(t => t.TicketId == ticketId).FirstOrDefault();
+                    if(ticket != null)
+                    {
+                        ticket.FK_AssignedUser = assignedUserId;
+                        ticket.Status = "Assigned";
+                        ctx.SaveChanges();
+                        log.Info($"Successfully updated ticked, id: {ticket.TicketId}");
+                    }
+                }
+                return ticket;
             }
             catch (Exception e)
             {
