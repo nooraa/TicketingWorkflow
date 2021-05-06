@@ -9,15 +9,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./system-dashboard-component.scss']
 })
 export class SystemDashboardComponent implements OnInit {
-  formG = new FormGroup({
-    user: new FormControl('', [Validators.required]),
+  dashboardForm = new FormGroup({
+    supUser: new FormControl('', [Validators.required]),
     checkbox: new FormControl('', [Validators.required]),
   });
+
   displayedColumns: string[] = ['tilte', 'description', 'submitterEmail', 'status', 'assign'];
+
   unassignedTickets: UnassignedTicket[] = [];
   supportUsers: UserInfo[] = [];
   selectedTickets: UnassignedTicket[] = [];
   dataSource = this.unassignedTickets;
+
   constructor(private ticketService: TicketManagmenetService) { 
   }
 
@@ -33,6 +36,7 @@ export class SystemDashboardComponent implements OnInit {
     }
     console.log(this.selectedTickets);
   }
+
   updateCheckedList(element: UnassignedTicket) {
     if (this.selectedTickets !== null && !this.selectedTickets.find(i => i.id === element.id)) {
       this.selectedTickets.push(element);
@@ -44,9 +48,9 @@ export class SystemDashboardComponent implements OnInit {
   }
 
   onSubmit() {
-    let userId = this.formG.controls['user'].value?.id;
+    let userId = this.dashboardForm.controls['supUser'].value.id;
     if (this.selectedTickets !== null && this.selectedTickets.length !== 0) {
-      this.ticketService.assignTickettoUser(userId, this.selectedTickets[0].id).subscribe(res => {
+    this.ticketService.assignTickettoUser(userId, this.selectedTickets[0].id).subscribe(res => {
         console.log(res);
       });
         console.log(this.selectedTickets[0].id);
@@ -68,5 +72,4 @@ export class SystemDashboardComponent implements OnInit {
     this.ticketService.GetSupportUsers()
       .subscribe(users => this.supportUsers = users);
   }
-
 }

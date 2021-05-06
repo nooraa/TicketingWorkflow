@@ -35,11 +35,11 @@
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
-    <mat-form-field appearance="fill" class="form-element">
+    <mat-form-field appearance="fill" class="form-element" hintLabel="Max file size is 2MB!">
         <div>
             <mat-toolbar>
                 <!-- Display files names -->
-                <input matInput formControlName="uploadedFile" name="fileAttr" [(ngModel)]="fileAttr" readonly>
+                <input matInput name="fileAttr" formControlName ="uploadFile" [(ngModel)]="fileAttr" readonly>
 
 
                 <!-- Browse Button -->
@@ -50,14 +50,16 @@
             <!-- Fetch selected filed on change -->
             <input type="file"
                 accept=".txt, .docx, .pdf,.doc,application/msword, .csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-                #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" />
+                #fileInput id="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile" formControlName="fileData"/>
+                <mat-error *ngIf="fileSizeError">Too big file, Please upload another one!
+                </mat-error>
         </div>
     </mat-form-field>
     <mat-card-actions>
-        <button [disabled]="!ticketRequestForm.valid" style="float: right;margin:5px;" mat-raised-button type="submit"
+        <button [disabled]="!ticketRequestForm.valid" style="float:right;margin:5px;" mat-raised-button type="submit"
             color="primary">Submit</button>
     </mat-card-actions>
     <mat-card-actions>
-        <button style="float: right;margin:5px;" mat-raised-button color="Basic">Cancel</button>
+        <button style="float: right;margin:5px;" mat-raised-button (click)="ticketRequestForm.reset()" color="Basic">Cancel</button>
     </mat-card-actions>
 </form>

@@ -3,7 +3,6 @@ import { Category, SubCategory, TicketRequest } from '../../Models/Models';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TicketManagmenetService } from '../../Services/ticket-Managment-Service';
 
-
 @Component({
   selector: 'app-ticket-request-component',
   templateUrl: './ticket-request-component.html',
@@ -16,10 +15,12 @@ export class TicketRequestComponent implements OnInit {
     description: new FormControl(''),
     category: new FormControl('', [Validators.required]),
     subcategory: new FormControl('', [Validators.required]),
-    uploadedFile: new FormControl('', [Validators.required])
+    uploadFile: new FormControl('', [Validators.required]),
+    fileData:new FormControl('')
   });
   categories: Category[] = [];
   subcategories: SubCategory[] = [];
+  fileSizeError: boolean = false;
   filtredSubcategories: SubCategory[] = [];
  
   @ViewChild('fileInput') fileInput: ElementRef = new ElementRef(null);
@@ -52,25 +53,20 @@ export class TicketRequestComponent implements OnInit {
   }
 
   uploadFileEvt(upploadedFile: any) {
+    this.fileSizeError = false;
     if (upploadedFile.target.files && upploadedFile.target.files[0]) {
       this.fileAttr = '';
       let file: File = upploadedFile.target.files[0];
-      if(file.size * 2  > 2**21){
-        this.ticketRequestForm.invalid;
+      //disable uploading more than 2mb file
+      if(file.size > 2097152){ 
+        this.ticketRequestForm.controls['fileData']?.setErrors({'incorrect': true});
+        this.fileSizeError = true;
       }
       this.fileAttr += file.name;
       // HTML5 FileReader API
       let reader = new FileReader();
-      reader.onload = (e: any) => {
-        let image = new Image();
-        image.src = e.target.result;
-        image.onload = rs => {
-          let imgBase64Path = e.target.result;
-        };
-      };
       reader.readAsDataURL(upploadedFile.target.files[0]);
-      
-      // Reset if duplicate image uploaded again
+      // Reset if duplicate uploaded again
       this.fileInput.nativeElement.value = "";
     } else {
       this.fileAttr = 'Choose File';
